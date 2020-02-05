@@ -70,12 +70,12 @@ public class ModifyOk extends HttpServlet {
 				connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe" , "scott" , "tiger");
 				stmt = connection.createStatement();
 				int i = stmt.executeUpdate(query);
-				if(i == 1) {
-					System.out.println("Update Success");
+				if(i ==1 ){
+					System.out.println("update success");
 					httpSession.setAttribute("name", name);
 					response.sendRedirect("modifyResult.jsp");
 				} else {
-					System.out.println("Update Fail");
+					System.out.println("update fail");
 					response.sendRedirect("modify.jsp");
 				}
 			} catch(Exception e) {

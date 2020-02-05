@@ -57,7 +57,7 @@ public class JoinOk extends HttpServlet {
 	//doGet 이든 doPost든 actionDo 로 오게끔 설계
 	private void actionDo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.setCharacterEncoding("EUC-KR"); //한글깨지지 않게 설정
+		request.setCharacterEncoding("EUC-KR");
 		
 		name = request.getParameter("name");
 		id = request.getParameter("id");
@@ -71,7 +71,7 @@ public class JoinOk extends HttpServlet {
 		//원래는 'name' 이렇게 들어가는데 자바 스트링 이니까 '"name"'으로 해준거임
 		String query = "insert into member values('" + name + "', '" + id + "', '" + pw + "', '" + phone1 + "', '" + phone2 + "', '"+ phone3 + "', '" + gender + "')";
 		
-		try { //db 로드
+		try { //db로드
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe" , "scott" , "tiger");
 			stmt = connection.createStatement();

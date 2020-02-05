@@ -70,7 +70,6 @@ public class LogInOk extends HttpServlet {
 				phone2 = resultSet.getString("phone2");
 				phone3 = resultSet.getString("phone3");
 				gender = resultSet.getString("gender");
-
 			}
 			
 			HttpSession httpSession = request.getSession();
